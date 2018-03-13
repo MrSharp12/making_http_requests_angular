@@ -1,2 +1,2 @@
 # making_http_requests_angular
-catching http errors
+using the asynch pipes with http requests
