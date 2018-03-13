@@ -1,2 +1,2 @@
 # making_http_requests_angular
-sending request (POST example)
+adjusting request headers and sending GET requests
