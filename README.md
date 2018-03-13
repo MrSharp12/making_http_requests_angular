@@ -1,2 +1,2 @@
 # making_http_requests_angular
-sending a PUT requests
+transform responses easily with observable operators(map())
