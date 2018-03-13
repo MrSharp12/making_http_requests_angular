@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 //Injectable is needed if you plan on injecting a service into a service
 //we will need to subscribe for this post to work
 @Injectable()
@@ -21,7 +22,16 @@ export class ServerService {
         .map(
             (response: Response) => {
                 const data = response.json();
+                for (const server of data) {
+                    server.name = 'FETCHED_' + server.name;
+                }
                 return data;
+            }
+        )
+        //catch allows for centralized error transformation
+        .catch(
+            (error: Response) => {
+                return Observable.throw('Something went wrong');
             }
         );
     }
